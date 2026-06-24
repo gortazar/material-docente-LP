@@ -1,0 +1,46 @@
+---
+title: "Práctica 3 - Módulos y paquetes"
+author: "Francisco Gortázar"
+license: CC-BY-4.0
+format: pdf
+---
+
+# Enunciado
+
+::: {.callout-note}
+## Nota
+Esta práctica es opcional, no hay que entregarla. 
+:::
+
+## Ejercicio 1 - Definición de módulos
+
+En la práctica 2 convertiste las operaciones de unión, intersección, diferencia y diferencia simétrica de conjuntos para listas en funciones. Incluye dichas operaciones en un módulo de forma que puedan ser llamadas de la siguiente forma:
+
+```python
+import operaciones_conjuntos
+lista1 = ...
+lista2 = ...
+union = operaciones_conjuntos.union(lista1, lista2)
+interseccion = operaciones_conjuntos.interseccion(lista1, lista2)
+diferencia = operaciones_conjuntos.diferencia(lista1, lista2)
+diferencia_simetrica = operaciones_conjuntos.diferencia_simetrica(lista1, lista2)
+```
+
+En esa misma práctica 2, tuviste que implementar una función para el cálculo del histograma. Sácala a su propio módulo junto con la función `print_histogram`.
+
+Haz lo propio con la función `filter_text` y la función `apply` incluyéndolas juntas en un módulo.
+
+Finalmente, crea un módulo `app.py` que use los módulos anteriores para construir el histograma de una lista conteniendo 1000 números aleatorios entre 0 y 20.
+
+## Ejercicio 2 - Definición de paquetes
+
+La solución actual del ejercicio 1 mezcla conceptos que deberían estar separados. Divide los módulos en los siguientes paquetes:
+
+- operaciones_conjuntos
+    - Módulos contenidos: operaciones_conjuntos
+- histogramas
+    - Módulos contenidos: histograma, print_histogram (separar las dos funciones en dos módulos distintos)
+- filtros
+    - Módulos contenidos: filter_text, apply (separar las dos funciones en dos módulos distintos)
+
+Modifica `app.py` para que utilice los módulos de los paquetes que has definido.

@@ -1,0 +1,26 @@
+---
+title: "Práctica 5 - Programación Orientada a Objetos"
+author: "Francisco Gortázar"
+license: CC-BY-4.0
+format: pdf
+---
+
+# Enunciado
+
+::: {.callout-note}
+## Nota
+Esta práctica es opcional, no hay que entregarla. 
+:::
+
+## Ejercicio 1 - Definición de clases
+
+En una universidad existen diferentes grados (titulaciones). Cada grado tiene una serie de asignaturas. Estas asignaturas tienen asignado un profesor y una lista de estudiantes. Crea un modelo orientado a objetos para representar estos conceptos. Implementa cada clase en su propio módulo.
+
+Crea un programa principal que cree:
+
+* una universidad,
+* conn una titulación,
+* con una asignatura dentro de dicha titulación,
+* con una lista de estudiantes cuyos nombres constarán de una sola letra generada aleatoriamente entre las 27 letras del alfabeto,
+* con un profesor.
+

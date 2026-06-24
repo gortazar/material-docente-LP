@@ -1,0 +1,53 @@
+---
+title: "Práctica 1 - Instalación y conceptos básicos"
+author: "Francisco Gortázar"
+license: CC-BY-4.0
+format: pdf
+---
+
+# Enunciado
+
+::: {.callout-note}
+## Nota
+Esta práctica es opcional, no hay que entregarla. 
+:::
+
+## Ejercicio 1 - Uso de entornos virtuales
+
+A partir de esta infografía que describe el uso de entornos virtuales en Python:
+
+![Infografía sobre el uso de venv](../Material/tema%202%20infografia%20venv.png)
+
+Realiza las siguientes tareas:
+
+- Crea una carpeta para el proyecto 
+- Crea un entorno virtual en dicha carpeta
+- Activa el entorno
+- Instala una versión concreta del paquete Flask con `pip install` (recomendación: busca en PyPi el paquete Flask)
+- Genera el fichero requirements.txt con `pip freeze > requirements.txt`
+- Verifica que la dependencia de Flask que instalaste aparece en el fichero
+- Desactiva el entorno virtual
+- Comprueba usando alguno de los comandos de pip que esa dependencia no aparece fuera del entorno
+
+## Ejercicio 2 - Estructuras de datos y flujo de control
+
+Se desea implementar las operaciones de unión, intersección, diferencia y diferencia simétrica de conjuntos para listas.
+
+No se permite el uso de conjuntos ni ninguna función que realice las operaciones que se piden.
+
+Dados las siguientes listas:
+
+```python
+lista1 = [1, 2, 3, 4, 5]
+lista2 = [3, 4, 5, 6, 7]
+```
+
+Los resultados deberían ser:
+
+```python
+union == [1, 2, 3, 4, 5, 6, 7]
+interseccion == [3, 4, 5]
+diferencia == [1, 2]
+diferencia_simetrica == [1, 2, 6, 7]
+```
+

@@ -1,0 +1,125 @@
+---
+title: "Lenguajes de Programación - Examen Temas 1 y 2"
+subtitle: "Junio de 2026. Soluciones"
+format: 
+    pdf:
+        fontsize: 14pt
+        include-in-header: 
+            text: |
+                \usepackage{makecell}
+        table-bordered: true  # <--- Esto fuerza las líneas en todas las celdas
+---
+
+# Ejercicio 1 (3 puntos)
+
+Una empresa de logística necesita gestionar su flota de vehículos. Cada Vehiculo tiene un nombre, un consumo medio (litros/100km) y los kilómetros recorridos en el último trayecto. La clase debe incluir un método gasolina_gastada() que calcule los litros totales consumidos en ese trayecto.
+Se pide modelar esta estructura con clases en Python, incluyendo una clase Flota que almacene una lista de vehículos. La clase Flota debe tener un método llamado generar_informe_consumos() que sea una función generadora. Este método debe iterar sobre los vehículos y entregar (yield), uno a uno, el consumo total de cada vehículo.
+
+    Puntuación: Se valorará con 1.5 puntos si la solución no usa funciones generadoras. Se valorará con 3 puntos si utiliza correctamente yield y anotaciones de tipos (type hints).
+
+```python
+class Vehiculo:
+    def __init__(self, nombre: str, consumo: float, km: float):
+        self.nombre = nombre
+        self.consumo = consumo
+        self.km = km
+    
+    def gasolina_gastada(self) -> float:
+        return (self.km * self.consumo) / 100
+
+class Flota:
+    def __init__(self, lista_vehiculos: list[Vehiculo]):
+        self.vehiculos = lista_vehiculos
+
+    def generar_informe_consumos(self):
+        for v in self.vehiculos:
+            yield v.gasolina_gastada()
+```
+
+{{< pagebreak >}}
+
+# Ejercicio 2 (3 puntos)
+
+Dada la siguiente función que filtra números mayores a 10 y les aplica un impuesto del 21%, modifíquela para que realice exactamente lo mismo utilizando una list comprehension (lista por comprensión) en una sola línea.
+
+```python
+def convert_comprehension(precios):
+    return [p * 1.21 for p in precios if p > 10]
+```
+
+
+{{< pagebreak >}}
+
+
+# Ejercicio 3 (4 puntos. Respuesta correcta: 0,4 puntos, respuesta incorrecta: -0,12 puntos, sin respuesta: 0 puntos)
+
+Marque la respuesta elegida (a, b, c o d) en la siguiente tabla. Si se equivoca, táchela y marque la escogida debajo. No se considerarán respuestas que no estén en la tabla.
+
++-----+-----+-----+-----+-----+-----+-----+-----+-----+------+
+|  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  10  |
++=====+=====+=====+=====+=====+=====+=====+=====+=====+======+
+|  b  |  b  |  c  |  b  |  c  |  b  |  c  |  b  |  c  |  b   |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+------+
+
+Indique la respuesta correcta:
+
+1. Sobre las funciones generadoras: 
+    a) Utilizan return para entregar todos los valores a la vez. 
+    b) **Permiten la evaluación perezosa, generando valores solo cuando se piden.**
+    c) Una vez terminadas, reinician su ciclo automáticamente si se vuelven a llamar. 
+    d) No pueden ser utilizadas dentro de un bucle for.
+
+2. Para heredar de una clase padre y llamar a su constructor se usa: 
+    a) parent().__init__(...) 
+    b) **super().__init__(...)**
+    c) self.super().__init__(...) 
+    d) No es necesario llamar al constructor del padre.
+
+3. ¿Qué ocurre en un bloque try-except-finally si no se produce ninguna excepción? 
+    a) Solo se ejecuta el bloque try. 
+    b) Se ejecutan los bloques try y except. 
+    c) **Se ejecutan los bloques try y finally.**
+    d) El programa da un error de ejecución.
+
+4. Las funciones lambda en Python: 
+    a) Pueden contener múltiples líneas de código complejo. 
+    b) **Están limitadas a una única expresión.**
+    c) No pueden recibir argumentos. 
+    d) Se definen con la palabra reservada def.
+
+5. El método items() en un diccionario devuelve: 
+    a) Solo las claves del diccionario. 
+    b) Solo los valores del diccionario. 
+    c) **Una secuencia de pares (clave, valor).**
+    d) El número total de elementos.
+
+6. ¿Cuál es la forma correcta de definir un alias de tipo (Type Alias) en Python 3.12+? 
+    a) alias Vector = list[float]
+    b) **type Vector = list[float]**
+    c) Vector := list[float] 
+    d) new Type Vector as list[float]
+
+7. En la instalación de Python, el gestor de paquetes estándar es: 
+    a) Apt-get 
+    b) Homebrew 
+    c) **Pip**
+    d) Pyenv
+
+8. Al pasar una lista a una función como mi_func(lista[:]), estamos pasando: 
+    a) Una referencia al objeto original. 
+    b) **Una copia de la lista mediante slicing.**
+    c) Solo el primer elemento de la lista. 
+    d) Un error de sintaxis.
+
+9. Los argumentos capturados con **kwargs se reciben dentro de la función como: 
+    a) Una lista (list). 
+    b) Una tupla (tuple). 
+    c) **Un diccionario (dict).** 
+    d) Un conjunto (set).
+
+10. El archivo __init__.py en un directorio sirve para: 
+    a) Ejecutar el programa principal. 
+    b) **Indicar que el directorio debe ser tratado como un paquete.**
+    c) Instalar las dependencias del proyecto automáticamente. 
+    d) Guardar las configuraciones del entorno virtual.
+

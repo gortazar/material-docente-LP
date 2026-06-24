@@ -1,0 +1,89 @@
+---
+title: "Práctica 2 - Funciones"
+author: "Francisco Gortázar"
+license: CC-BY-4.0
+format: pdf
+---
+
+# Enunciado
+
+::: {.callout-note}
+## Nota
+Esta práctica es opcional, no hay que entregarla. 
+:::
+
+## Ejercicio 1 - Definición de funciones
+
+En la práctica 1 implementaste las operaciones de unión, intersección, diferencia y diferencia simétrica de conjuntos para listas. Incluye dichas operaciones en funciones de forma que puedan ser llamadas de la siguiente forma:
+
+```python
+union = union(lista1, lista2)
+interseccion = interseccion(lista1, lista2)
+diferencia = diferencia(lista1, lista2)
+diferencia_simetrica = diferencia_simetrica(lista1, lista2)
+```
+
+## Ejercicio 2 - Uso de lambdas
+
+Se desea construir una función que dado un texto como un string y un filtro, devuelva una lista de palabras excluyendo las que hacen cierto el filtro:
+
+```python
+text = "La asignatura es la más fácil de la titulación"
+filtered_text = filter_text(text, lambda x: x.contains("la"))
+print(filtered_text) # -> ["asignatura", "es", "más", "fácil", "de", "titulación"]
+```
+
+::: {.callout-note}
+## Nota
+Recuerda que puedes definir un texto con varias líneas usando comillas triples:
+```python
+"""Este texto
+se expande
+por varias líneas"""
+```
+:::
+
+A continuación se desea implementar una función que dada una lista y una función, devuelva una lista con el resultado de aplicar la función a cada elemento de la lista original.
+
+```python
+lengths = apply(lambda x: len(x), filtered_text)
+print(lengths) # -> [10, 2, 3, 5, 2, 10]
+```
+
+A continuación definir una función que dada una lista, construya un histograma con el número de veces que aparece cada valor y lo devuelva como un mapa:
+
+```python
+hist = histogram(lengths)
+print(hist) # -> {10: 2, 2: 2, 3: 1, 5: 1}
+```
+
+Buscar en la red cómo ordenar el diccionario por claves:
+
+```python
+ordered_hist = ...
+print(ordered_hist) # -> {2: 2, 3: 1, 5: 1, 10: 2}
+```
+
+Finalmente, definir una función que dado un histograma imprima por pantalla el histograma:
+
+```python
+print_histogram(hist)
+```
+
+Resultado:
+
+```shell
+2 :  ========================================
+3 :  ====================
+5 :  ====================
+10 :  ========================================
+```
+
+Imprimir el histograma de una lista conteniendo 1000 números aleatorios entre 0 y 20. Generar los números aleatorios con la siguiente función:
+
+```python
+import random
+random.seed(42) # Establece la semilla para obtener siempre los mismos números aleatorios de cara a depurar
+random_numbers = [random.randint(0, 20) for _ in range(1000)]
+
+```

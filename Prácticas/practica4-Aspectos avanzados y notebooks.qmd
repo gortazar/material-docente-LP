@@ -1,0 +1,44 @@
+---
+title: "Práctica 4 - Notebooks"
+author: "Francisco Gortázar"
+license: CC-BY-4.0
+format: pdf
+---
+
+# Enunciado
+
+::: {.callout-note}
+## Nota
+Esta práctica es opcional, no hay que entregarla. 
+:::
+
+## Ejercicio 1 - Instalación y ejecución de Jupyter Lab
+
+Realiza los siguientes pasos para instalar y arrancar Jupyter Lab:
+
+* Crea una carpeta para la práctica
+* Crea y activa un entorno virtual en ella
+* Instala Jupyter Lab con `pip install jupyterlab`
+* Arráncalo con `jupyter lab`
+* Carga el fichero `lp.ipynb` que encontrarás en el repositorio de código de la asignatura
+
+## Ejercicio 2 - Funciones generadoras
+
+Implementa en tu notebook una función generadora `letters` que dada una letra devuelve cada letra que va antes que ella en el abecedario. Es decir, dada la siguiente llamada:
+
+```python
+for letter in letters('f'):
+    print(letter)
+```
+
+Debería dar como resultado:
+
+```shell
+a
+b
+c
+d
+e
+```
+
+Para ello puedes apoyarte en las funciones `ord` y `chr`. La primera dado un carácter devuelve su código ASCII. La segunda dado un código ASCII devuelve un carácter.
