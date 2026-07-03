@@ -15,7 +15,9 @@ format:
 Una empresa de logística necesita gestionar su flota de vehículos. Cada Vehiculo tiene un nombre, un consumo medio (litros/100km) y los kilómetros recorridos en el último trayecto. La clase debe incluir un método gasolina_gastada() que calcule los litros totales consumidos en ese trayecto.
 Se pide modelar esta estructura con clases en Python, incluyendo una clase Flota que almacene una lista de vehículos. La clase Flota debe tener un método llamado generar_informe_consumos() que sea una función generadora. Este método debe iterar sobre los vehículos y entregar (yield), uno a uno, el consumo total de cada vehículo.
 
-    Puntuación: Se valorará con 1.5 puntos si la solución no usa funciones generadoras. Se valorará con 3 puntos si utiliza correctamente yield y anotaciones de tipos (type hints).
+**Puntuación:** Se valorará con 1.5 puntos si la solución no usa funciones generadoras. Se valorará con 3 puntos si utiliza correctamente yield y anotaciones de tipos (type hints).
+
+{{< pagebreak >}}
 
 ```python
 class Vehiculo:
